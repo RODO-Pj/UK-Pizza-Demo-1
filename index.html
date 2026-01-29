@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="ckb" dir="rtl">
+<html lang="ku">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UK Pizza Erbil - مێنیو</title>
+    <title>وەستا ئەحمەد - کەبابی تایبەتی</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         :root {
-            --soft-white: #f9f9f9;
-            --soft-blue: #e6f2ff;
-            --soft-red: #ffe6e6;
-            --accent-blue: #1e3a8a;
-            --accent-red: #dc2626;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
+            --primary: #c62828;
+            --primary-dark: #8e0000;
+            --secondary: #f9a825;
+            --light: #f5f5f5;
+            --dark: #212121;
+            --success: #2e7d32;
+            --warning: #f57c00;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
             --transition: all 0.3s ease;
         }
 
@@ -26,2111 +28,1970 @@
         }
 
         body {
-            background-color: var(--soft-white);
-            color: var(--text-dark);
+            background-color: #f8f8f8;
+            color: var(--dark);
             line-height: 1.6;
-            overflow-x: hidden;
+            direction: rtl;
+            padding-top: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
-        /* Header Styles - UPDATED WITH UK PIZZA ERBIL LOGO */
+        /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            height: 50px;
-            width: 50px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-red));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
             color: white;
-            font-weight: bold;
-            font-size: 18px;
+            padding: 2rem 0;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
             box-shadow: var(--shadow);
-        }
-
-        .logo-text {
-            font-size: 28px;
-            font-weight: 800;
-            line-height: 1.1;
-        }
-
-        .uk {
-            color: var(--accent-blue);
-        }
-
-        .pizza {
-            color: var(--accent-red);
-        }
-
-        .erbil {
-            display: block;
-            font-size: 14px;
-            color: #666;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: var(--transition);
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        nav ul li a:hover {
-            color: var(--accent-blue);
-        }
-
-        nav ul li a::after {
+        header::before {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-blue);
-            transition: var(--transition);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.05);
+            transform: rotate(30deg);
         }
 
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            font-size: 22px;
-            color: var(--text-dark);
-            transition: var(--transition);
-        }
-
-        .cart-icon:hover {
-            color: var(--accent-blue);
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-red);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
+        .logo {
+            font-size: 2.5rem;
             font-weight: bold;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-dark);
+        .logo span {
+            color: var(--secondary);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 40px;
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Menu Categories */
-        .categories {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
-            padding: 0 10px;
-        }
-
-        .category-btn {
-            background-color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+        /* Side Profile */
+        .side-profile {
+            position: fixed;
+            top: 30%;
+            right: -400px;
+            width: 350px;
+            background: white;
+            border-radius: var(--radius) 0 0 var(--radius);
             box-shadow: var(--shadow);
-            font-size: 15px;
+            padding: 1.5rem;
+            z-index: 1000;
+            transition: right 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            opacity: 0;
         }
 
-        .category-btn:hover {
-            background-color: var(--soft-blue);
-            transform: translateY(-3px);
+        .side-profile.show {
+            right: 0;
+            opacity: 1;
         }
 
-        .category-btn.active {
-            background-color: var(--accent-blue);
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin-left: 1rem;
+        }
+
+        .profile-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 1.5rem 0;
+        }
+
+        .contact-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
         }
 
-        /* Menu Items */
-        .menu-section {
-            margin-bottom: 60px;
+        .contact-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        .viber { background: #7360F2; }
+        .whatsapp { background: #25D366; }
+        .instagram { background: #E4405F; }
+        .facebook { background: #1877F2; }
+        .phone { background: var(--primary); }
+
+        .contact-detail {
+            background: #f9f9f9;
+            padding: 0.8rem;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 32px;
-            color: var(--text-dark);
-            position: relative;
-            padding-bottom: 15px;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-blue);
+        .section-title i {
+            margin-left: 0.5rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .experience-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Menu Section */
+        .menu-section {
+            margin-bottom: 2rem;
+        }
+
+        .menu-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .category-btn {
+            padding: 0.7rem 1.5rem;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .menu-item {
-            background-color: white;
-            border-radius: 12px;
+            background: white;
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            cursor: pointer;
         }
 
         .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
         .item-image {
-            height: 180px;
             width: 100%;
-            background-size: cover;
-            background-position: center;
+            height: 180px;
+            object-fit: cover;
         }
 
         .item-content {
-            padding: 18px;
+            padding: 1.2rem;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
         }
 
-        .item-name {
-            font-size: 18px;
-            font-weight: 600;
+        .item-title {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-weight: bold;
         }
 
         .item-price {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--accent-red);
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         .item-description {
-            color: var(--text-light);
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.5;
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
-        .add-to-cart {
-            background-color: var(--accent-blue);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            width: 100%;
-            justify-content: center;
-        }
-
-        .add-to-cart:hover {
-            background-color: #152c6b;
-        }
-
-        /* Product Detail Modal */
-        .product-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 500px;
-            height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-            z-index: 1001;
-            transition: right 0.4s ease;
-            overflow-y: auto;
-        }
-
-        .product-modal.active {
-            right: 0;
-            display: block;
-        }
-
-        .product-modal-content {
-            padding: 20px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-modal-header {
+        .item-controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
+            margin-top: 1rem;
         }
 
-        .product-modal-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-dark);
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            background: #f5f5f5;
+            border-radius: 50px;
+            padding: 0.3rem;
         }
 
-        .close-product-modal {
-            background: none;
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
             border: none;
-            font-size: 22px;
+            font-weight: bold;
             cursor: pointer;
-            color: var(--text-light);
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .close-product-modal:hover {
-            background-color: var(--soft-red);
-            color: var(--accent-red);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .product-details {
-            flex: 1;
-        }
-
-        .product-price {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--accent-red);
-            margin-bottom: 15px;
-        }
-
-        .product-description {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .product-info-section {
-            margin-bottom: 25px;
-        }
-
-        .product-info-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--accent-blue);
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--soft-blue);
-        }
-
-        .ingredients-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .ingredients-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-
-        .ingredients-list li:before {
-            content: "•";
-            color: var(--accent-blue);
+        .quantity {
+            margin: 0 0.8rem;
             font-weight: bold;
-            margin-left: 10px;
-        }
-
-        .calories-info {
-            background-color: var(--soft-blue);
-            padding: 15px;
-            border-radius: 8px;
+            min-width: 20px;
             text-align: center;
-            margin-top: 10px;
         }
 
-        .calories-amount {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--accent-blue);
-        }
-
-        .modal-add-to-cart {
-            background-color: var(--accent-blue);
+        .add-to-cart {
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
             cursor: pointer;
+            font-weight: bold;
             transition: var(--transition);
-            width: 100%;
-            margin-top: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 0.5rem;
         }
 
-        .modal-add-to-cart:hover {
-            background-color: #152c6b;
+        .add-to-cart:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
         }
 
-        /* Background blur container */
-        .main-content {
-            transition: filter 0.3s ease;
+        .favorite-btn {
+            background: none;
+            border: none;
+            color: #ddd;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 0.5rem;
         }
 
-        .main-content.blur-background {
-            filter: blur(5px);
-            pointer-events: none;
+        .favorite-btn.active {
+            color: #ff4081;
         }
 
-        /* Cart Modal */
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
+        .spice-selector {
+            display: flex;
             align-items: center;
+            margin-top: 0.5rem;
         }
 
-        .cart-content {
-            background-color: white;
-            width: 95%;
-            max-width: 500px;
-            border-radius: 12px;
-            padding: 20px;
-            max-height: 80vh;
-            overflow-y: auto;
+        .spice-level {
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+            color: #666;
+        }
+
+        .spice-dots {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .spice-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .spice-dot.active {
+            background: var(--warning);
+        }
+
+        /* Cart Section */
+        .cart-section {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            position: sticky;
+            bottom: 20px;
+            z-index: 100;
         }
 
         .cart-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-title {
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: var(--transition);
-        }
-
-        .close-cart:hover {
-            color: var(--accent-red);
+            margin-bottom: 1.5rem;
         }
 
         .cart-items {
-            margin-bottom: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
         }
 
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
+            padding: 1rem;
             border-bottom: 1px solid #eee;
         }
 
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
         .cart-item-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex: 1;
-        }
-
-        .cart-item-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-        }
-
-        .cart-item-details {
             flex: 1;
         }
 
         .cart-item-name {
-            font-weight: 600;
-            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-details {
+            display: flex;
+            gap: 1rem;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         .cart-item-price {
-            color: var(--accent-red);
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: bold;
+            color: var(--primary);
         }
 
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .quantity-btn {
-            background-color: var(--soft-blue);
-            border: none;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 12px;
-        }
-
-        .quantity-btn:hover {
-            background-color: var(--accent-blue);
-            color: white;
-        }
-
-        .cart-item-quantity {
-            font-weight: 600;
-            min-width: 25px;
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            color: var(--accent-red);
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 5px;
-            transition: var(--transition);
-        }
-
-        .remove-item:hover {
-            color: #b91c1c;
+            gap: 1rem;
         }
 
         .cart-total {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding-top: 1rem;
             border-top: 2px solid #eee;
-            font-size: 18px;
-            font-weight: 700;
         }
 
         .total-price {
-            color: var(--accent-red);
+            color: var(--primary);
         }
 
-        /* CHANGED FROM checkout-btn TO order-btn */
-        .order-btn {
-            background-color: var(--accent-blue);
-            color: white;
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
             border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
             transition: var(--transition);
-            width: 100%;
-            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .order-btn:hover {
-            background-color: #152c6b;
+        .btn-primary {
+            background: var(--primary);
+            color: white;
         }
 
-        .empty-cart {
-            text-align: center;
-            padding: 30px 0;
-            color: var(--text-light);
+        .btn-primary:hover {
+            background: var(--primary-dark);
         }
 
-        .empty-cart i {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #ddd;
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
         }
 
-        /* Table Selection Modal */
-        .table-modal {
+        .btn-secondary:hover {
+            background: #e69500;
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: #f9f9f9;
+        }
+
+        /* Order Modal */
+        .modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1002;
-            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
             align-items: center;
-        }
-
-        .table-content {
-            background-color: white;
-            width: 95%;
-            max-width: 500px;
-            border-radius: 12px;
+            justify-content: center;
             padding: 20px;
-            max-height: 80vh;
-            overflow-y: auto;
         }
 
-        .table-header {
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius) var(--radius) 0 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
         }
 
-        .table-title {
-            font-size: 22px;
-            font-weight: 700;
+        .modal-title {
+            font-size: 1.5rem;
+            margin: 0;
         }
 
-        .close-table {
+        .close-modal {
             background: none;
             border: none;
-            font-size: 22px;
+            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-light);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-size: 1rem;
             transition: var(--transition);
         }
 
-        .close-table:hover {
-            color: var(--accent-red);
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
         }
 
-        .table-instruction {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-        .table-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 10px;
-        }
-
-        .table-btn {
-            background-color: var(--soft-blue);
-            border: none;
-            padding: 15px 10px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 16px;
-            color: var(--accent-blue);
+        .location-options {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .table-btn:hover {
-            background-color: var(--accent-blue);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .table-btn.selected {
-            background-color: var(--accent-blue);
-            color: white;
-        }
-
-        .confirm-table-btn {
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+        .location-option {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: var(--radius);
             cursor: pointer;
             transition: var(--transition);
-            width: 100%;
-            margin-top: 10px;
         }
 
-        .confirm-table-btn:hover {
-            background-color: #b91c1c;
+        .location-option.active {
+            border-color: var(--primary);
+            background: rgba(198, 40, 40, 0.05);
         }
 
-        .confirm-table-btn:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
+        .location-option i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
         }
 
-        /* Pizza Animation Notification - FIXED */
-        .pizza-notification {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 1003;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-        }
-
-        .pizza-animation-container {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 30px;
-        }
-
-        .pizza-notification-text {
-            font-size: 28px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #FFDE31;
-            animation: pulse 1.5s infinite;
-        }
-
-        .pizza-notification-subtext {
-            font-size: 18px;
-            text-align: center;
-            max-width: 400px;
-            line-height: 1.5;
-            color: #f9f9f9;
-        }
-
-        /* FIXED PIZZA ANIMATION */
-        .pizza-svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pizza-whole {
-            animation: rotatePizza 4s linear infinite;
-            transform-origin: center;
-        }
-
-        .pizza-outline {
-            animation: rotateOutline 3s linear infinite reverse;
-            transform-origin: center;
-        }
-
-        @keyframes rotatePizza {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotateOutline {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 0.9;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background-color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .footer-content {
+        .notes-list {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 25px;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
-        .footer-section {
+        .note-option {
+            padding: 0.5rem 1rem;
+            background: #f5f5f5;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .note-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .datetime-picker {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .datetime-picker input {
             flex: 1;
             min-width: 200px;
         }
 
-        .footer-section h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: var(--accent-blue);
-        }
-
-        .footer-section p, .footer-section a {
-            color: var(--text-light);
-            margin-bottom: 8px;
-            display: block;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 14px;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-blue);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .social-icons a {
-            background-color: var(--soft-blue);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            background-color: var(--accent-blue);
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--dark);
             color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            max-width: 400px;
         }
 
-        .copyright {
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.error {
+            background: var(--primary);
+        }
+
+        .toast.success {
+            background: var(--success);
+        }
+
+        /* Success Animation */
+        .success-animation {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            color: var(--text-light);
-            font-size: 14px;
+            padding: 2rem;
         }
 
-        /* Responsive Design */
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--success);
+            margin: 0 auto 1.5rem;
+            position: relative;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .checkmark::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            border-right: 5px solid white;
+            border-bottom: 5px solid white;
+            top: 10px;
+            left: 28px;
+            transform: rotate(45deg);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        /* Loyalty Points */
+        .loyalty-points {
+            background: linear-gradient(to right, #ff9800, #ff5722);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .points-display {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .orders-list {
+            margin-top: 1.5rem;
+        }
+
+        .order-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .side-profile {
+                width: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: row;
-                justify-content: space-between;
-                gap: 10px;
-                padding: 10px 0;
+            .side-profile {
+                position: relative;
+                width: 100%;
+                right: 0;
+                opacity: 1;
+                top: 0;
+                margin-bottom: 2rem;
+                border-radius: var(--radius);
+                display: none;
             }
-
-            .logo-text {
-                font-size: 24px;
-            }
-
-            .logo-img {
-                height: 45px;
-                width: 45px;
-                font-size: 16px;
-            }
-
-            .mobile-menu-btn {
+            
+            .side-profile.show {
                 display: block;
             }
-
-            .cart-icon {
-                order: 3;
+            
+            .about-content {
+                flex-direction: column;
             }
-
-            nav ul {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
+            
+            .menu-items {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
-
-            nav ul li {
-                margin-left: 0;
+            
+            .cart-section {
+                position: static;
             }
+        }
 
-            .hero {
-                padding: 70px 15px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .categories {
-                gap: 8px;
-            }
-
-            .category-btn {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
+        @media (max-width: 576px) {
             .menu-items {
                 grid-template-columns: 1fr;
             }
-
-            .section-title {
-                font-size: 26px;
-            }
-
-            .cart-content {
-                width: 95%;
-                padding: 15px;
-            }
-
-            .table-content {
-                width: 95%;
-                padding: 15px;
-            }
-
-            .table-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            nav {
-                display: none;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                box-shadow: var(--shadow);
-            }
-
-            nav.active {
-                display: block;
-            }
-
-            nav ul {
+            
+            .cart-actions {
                 flex-direction: column;
-                gap: 0;
+            }
+            
+            .btn {
                 width: 100%;
             }
-
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-            }
-
-            .product-modal {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 50px 10px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .menu-items {
-                gap: 15px;
-            }
-
-            .item-content {
-                padding: 15px;
-            }
-
-            .footer-section {
-                min-width: 100%;
-            }
-
-            .product-image {
-                height: 200px;
-            }
-
-            .table-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .pizza-notification-text {
-                font-size: 22px;
-            }
-
-            .pizza-notification-subtext {
-                font-size: 16px;
-                padding: 0 15px;
+            
+            .location-options {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="logo-container">
-                    <div class="logo-img">
-                        UK
-                    </div>
-                    <div class="logo-text">
-                        <span class="uk">UK</span> <span class="pizza">Pizza</span>
-                        <span class="erbil">هەولێر</span>
-                    </div>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">وەستا ئەحمەد <span>کەباب</span></div>
+            <p class="tagline">باشترین کەبابی شاری هەولێر لە ماوەی ٦+ ساڵە</p>
+        </header>
+
+        <!-- Side Profile (Animated) -->
+        <div class="side-profile" id="sideProfile">
+            <div class="profile-header">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="وەستا ئەحمەد" class="profile-img">
+                <div class="profile-info">
+                    <h3>وەستا ئەحمەد</h3>
+                    <p>خاوەنی کەبابخانە</p>
                 </div>
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </div>
-                <nav id="mainNav">
-                    <ul>
-                        <li><a href="#home">سەرەکی</a></li>
-                        <li><a href="#menu">مێنیو</a></li>
-                        <li><a href="#about">دەربارە</a></li>
-                        <li><a href="#contact">پەیوەندی</a></li>
-                    </ul>
-                </nav>
+            </div>
+            <div class="contact-icons">
+                <a href="viber://contact?number=07701234567" class="viber" title="ڤایبەر"><i class="fab fa-viber"></i></a>
+                <a href="https://wa.me/9647701234567" class="whatsapp" target="_blank" title="واتساپ"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/wasta_ahmad_kebab" class="instagram" target="_blank" title="ئیستاگرام"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/wastaahmadkebab" class="facebook" target="_blank" title="فەیسبووک"><i class="fab fa-facebook"></i></a>
+                <a href="tel:07701234567" class="phone" title="ژمارەی مۆبایل"><i class="fas fa-phone"></i></a>
+            </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i> ٠٧٧٠ ١٢٣ ٤٥٦٧
             </div>
         </div>
-    </header>
 
-    <!-- Main Content (this gets blurred) -->
-    <div class="main-content" id="mainContent">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="container">
-                <h1>باشترین پیتزا لە شاری هەولێر</h1>
-                <p>پیتزای تایبەتی ئێمە بە باشترین پێکهاتە دروست دەکرێت و بە جوانترین شێوە پێشکەشت دەکرێت</p>
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="section-title"><i class="fas fa-user"></i> دەربارەی وەستا ئەحمەد</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>بەخێربێن بۆ کەبابخانەی وەستا ئەحمەد! من بۆ ماوەی زیاتر لە ٦ ساڵە کەباب لە شاری هەولێر دروست دەکەم و فرۆشتنیم کردووە.</p>
+                    <p>کەبابەکانم بە تامێکی تایبەت و بەهۆی بەکارهێنانی بەهارەت و گۆشتی تازە هەمیشە جیایان کردووەتەوە لە کەبابەکانی تر. هەموو ڕۆژێک گۆشتی تازە لە ڕەواءە کۆدەکەمەوە و بەهەمان ڕۆژدا دروستی دەکەم.</p>
+                    <p>ئەو ڕەسەنایەتەی کە لە کەباب دروستکردندا بەکاردەهێنم وەک میراتێک لە باوکەوە پێم گوێزراوەتەوە و بەوردەیی بەکاری دەهێنم.</p>
+                    <div class="experience-badge">
+                        <i class="fas fa-award"></i> ٦+ ساڵ لە بواری کەباب دروستکردندا
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="کەبابی وەستا ئەحمەد">
+                </div>
             </div>
         </section>
 
-        <!-- Menu Categories -->
-        <section class="container" id="menu">
-            <div class="categories">
+        <!-- Loyalty Points -->
+        <div class="loyalty-points" id="loyaltyPoints">
+            <div class="points-display" id="pointsDisplay">٠ خاڵ</div>
+            <p>هەر ١٠٠٠ دینار = ١ خاڵ • ١٠٠ خاڵ = کەبابێکی بێبەرامبەر!</p>
+        </div>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <h2 class="section-title"><i class="fas fa-utensils"></i> مێنیو</h2>
+            
+            <div class="menu-categories">
                 <button class="category-btn active" data-category="all">هەموو</button>
-                <button class="category-btn" data-category="pizza">پیتزا</button>
-                <button class="category-btn" data-category="burgers">بێرگەر</button>
-                <button class="category-btn" data-category="drinks">خواردنەوە</button>
-                <button class="category-btn" data-category="appetizers">پێش خواردن</button>
-                <button class="category-btn" data-category="desserts">دێزرت</button>
+                <button class="category-btn" data-category="kebab">کەباب</button>
+                <button class="category-btn" data-category="tika">تکا</button>
+                <button class="category-btn" data-category="special">تایبەت</button>
+            </div>
+            
+            <div class="menu-items" id="menuItems">
+                <!-- Menu items will be populated by JavaScript -->
             </div>
         </section>
 
-        <!-- Menu Items -->
-        <section class="container">
-            <!-- Pizza Section -->
-            <div class="menu-section" id="pizza">
-                <h2 class="section-title">پیتزا</h2>
-                <div class="menu-items">
-                    <!-- Pizza items will be added by JavaScript -->
+        <!-- Cart Section -->
+        <section class="cart-section">
+            <div class="cart-header">
+                <h2 class="section-title"><i class="fas fa-shopping-cart"></i> سەبەتە</h2>
+                <div class="cart-total">
+                    <span>کۆی گشتی:</span>
+                    <span class="total-price" id="totalPrice">٠ دینار</span>
                 </div>
             </div>
-
-            <!-- Burgers Section -->
-            <div class="menu-section" id="burgers">
-                <h2 class="section-title">بێرگەر</h2>
-                <div class="menu-items">
-                    <!-- Burger items will be added by JavaScript -->
-                </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+                <p style="text-align: center; padding: 2rem; color: #999;" id="emptyCartMessage">هێشتا هیچت زیاد نەکردووە بۆ سەبەتە</p>
             </div>
-
-            <!-- Drinks Section -->
-            <div class="menu-section" id="drinks">
-                <h2 class="section-title">خواردنەوە</h2>
-                <div class="menu-items">
-                    <!-- Drink items will be added by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Appetizers Section -->
-            <div class="menu-section" id="appetizers">
-                <h2 class="section-title">پێش خواردن</h2>
-                <div class="menu-items">
-                    <!-- Appetizer items will be added by JavaScript -->
-                </div>
-            </div>
-
-            <!-- Desserts Section -->
-            <div class="menu-section" id="desserts">
-                <h2 class="section-title">دێزرت</h2>
-                <div class="menu-items">
-                    <!-- Dessert items will be added by JavaScript -->
-                </div>
+            
+            <div class="cart-actions">
+                <button class="btn btn-outline" id="clearCartBtn">
+                    <i class="fas fa-trash"></i> پاککردنەوەی سەبەتە
+                </button>
+                <button class="btn btn-primary" id="orderBtn">
+                    <i class="fas fa-check-circle"></i> داواکاری
+                </button>
+                <button class="btn btn-secondary" id="scheduleOrderBtn">
+                    <i class="fas fa-calendar-alt"></i> داواکاری بە کاتی
+                </button>
             </div>
         </section>
+
+        <!-- Admin Panel (Hidden by default) -->
+        <div class="admin-panel" id="adminPanel">
+            <h2 class="section-title"><i class="fas fa-cog"></i> پانێلی بەڕێوەبردن (داواکاریەکان)</h2>
+            <p>ئەمە پانێلێکی ناوخۆیییە بۆ بینینی داواکاریەکان کە لە Formspree وەرگیراون (نموونەیی)</p>
+            <button class="btn btn-outline" id="refreshOrdersBtn">
+                <i class="fas fa-sync"></i> نوێکردنەوەی داواکاریەکان
+            </button>
+            <div class="orders-list" id="ordersList">
+                <!-- Orders will be populated by JavaScript -->
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h3>دەربارەی ئێمە</h3>
-                        <p>UK Pizza هەولێر باشترین شوێنی پیتزا لە هەولێرە کە پیتزای تایبەتی پێشکەش دەکات</p>
-                    </div>
-                    <div class="footer-section">
-                        <h3>پەیوەندی</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> هەولێر، کوردستان</p>
-                        <p><i class="fas fa-phone"></i> ٠٧٥٠ ١٢٣ ٤٥٦٧</p>
-                        <p><i class="fas fa-envelope"></i> info@ukpizza-erbil.com</p>
-                    </div>
-                    <div class="footer-section">
-                        <h3>کاتەکانی کار</h3>
-                        <p>هەینی - پێنجشەممە: ١٠:٠٠ بەیانی - ١١:٠٠ شەو</p>
-                        <p>هەینی - یەکشەممە: ١٠:٠٠ بەیانی - ١٢:٠٠ شەو</p>
-                    </div>
-                    <div class="footer-section">
-                        <h3>شوێنی ئێمە</h3>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="copyright">
-                    <p>© ٢٠٢٣ UK Pizza هەولێر. هەموو مافەکان پارێزراون.</p>
-                </div>
-            </div>
+            <p>کەبابخانەی وەستا ئەحمەد &copy; ٢٠٢٣ - هەموو مافەکان پارێزراون</p>
+            <p>هەولێر، کوردستان - ژمارە: ٠٧٧٠ ١٢٣ ٤٥٦٧</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">ئەم وێبسایتە بە Formspree کار دەکات بۆ وەرگرتنی داواکاریەکان</p>
         </footer>
     </div>
 
-    <!-- Product Detail Modal -->
-    <div class="product-modal" id="productModal">
-        <div class="product-modal-content">
-            <div class="product-modal-header">
-                <h2 class="product-modal-title" id="productModalTitle">ناوی بەرهەم</h2>
-                <button class="close-product-modal" id="closeProductModal">
-                    <i class="fas fa-times"></i>
-                </button>
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">تەواوکردنی داواکاری</h3>
+                <button class="close-modal" id="closeModalBtn">&times;</button>
             </div>
-            <div class="product-image" id="productModalImage"></div>
-            <div class="product-details">
-                <div class="product-price" id="productModalPrice">٠ دینار</div>
-                <p class="product-description" id="productModalDescription">وەسفی بەرهەم</p>
-                
-                <div class="product-info-section">
-                    <h3 class="product-info-title">پێکهاتەکان</h3>
-                    <ul class="ingredients-list" id="productModalIngredients">
-                        <!-- Ingredients will be added by JavaScript -->
-                    </ul>
-                </div>
-                
-                <div class="product-info-section">
-                    <h3 class="product-info-title">کالۆری</h3>
-                    <div class="calories-info">
-                        <div class="calories-amount" id="productModalCalories">٠ کالۆری</div>
-                    </div>
-                </div>
-                
-                <button class="modal-add-to-cart" id="modalAddToCart">
-                    <i class="fas fa-plus"></i> زیادکردن بە سەبەتە
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2 class="cart-title">سەبەتەی خواردن</h2>
-                <button class="close-cart" id="closeCart">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <div class="empty-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p>سەبەتەکەت بەتاڵە</p>
-                </div>
-            </div>
-            <div class="cart-total">
-                <span>کۆی گشتی:</span>
-                <span class="total-price" id="totalPrice">٠ دینار</span>
-            </div>
-            <!-- CHANGED FROM checkoutBtn TO orderBtn -->
-            <button class="order-btn" id="orderBtn">داواکردن</button>
-        </div>
-    </div>
-
-    <!-- Table Selection Modal -->
-    <div class="table-modal" id="tableModal">
-        <div class="table-content">
-            <div class="table-header">
-                <h2 class="table-title">هەڵبژاردنی مێز</h2>
-                <button class="close-table" id="closeTable">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <p class="table-instruction">تکایە ژمارەی مێزەکەت هەڵبژێرە (١ بۆ ٢٥)</p>
-            <div class="table-grid" id="tableGrid">
-                <!-- Table buttons will be added by JavaScript -->
-            </div>
-            <button class="confirm-table-btn" id="confirmTableBtn" disabled>
-                <i class="fas fa-check"></i> پشتڕاستکردنەوەی داواکاری
-            </button>
-        </div>
-    </div>
-
-    <!-- Pizza Animation Notification - FIXED -->
-    <div class="pizza-notification" id="pizzaNotification">
-        <div class="pizza-animation-container">
-            <svg class="pizza-svg" viewBox="0 0 122 122" xmlns="http://www.w3.org/2000/svg">
-                <!-- Pizza body -->
-                <circle cx="61" cy="61" r="61" fill="#FFB800"/>
-                <circle cx="61" cy="61" r="55" fill="#FFDE31"/>
-                
-                <!-- Pepperoni slices -->
-                <g fill="#CD2D36" stroke="#FEA202" stroke-miterlimit="10" stroke-width="2">
-                    <circle cx="61" cy="29.11" r="8" />
-                    <circle cx="38.45" cy="38.45" r="8" />
-                    <circle cx="29.11" cy="61" r="8" />
-                    <circle cx="38.45" cy="83.55" r="8" />
-                    <circle cx="61" cy="92.89" r="8" />
-                    <circle cx="83.55" cy="83.55" r="8" />
-                    <circle cx="92.89" cy="61" r="8" />
-                    <circle cx="83.55" cy="38.45" r="8" />
-                </g>
-                
-                <!-- Crust details -->
-                <circle cx="61" cy="61" r="48.2" fill="none" stroke="#FEA202" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="16 10 8 4"/>
-                <circle cx="61" cy="60.8" r="8" fill="#CD2D36" stroke="#FEA202" stroke-miterlimit="10" stroke-width="2"/>
-                
-                <!-- Outer crust decoration - added class for animation -->
-                <g class="pizza-outline" fill="none" stroke="#FEA202" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    <!-- Simplified crust lines for better animation -->
-                    <line x1="75.5" y1="115.1" x2="74.98" y2="113.16" />
-                    <line x1="70.73" y1="116.15" x2="70.38" y2="114.18" />
-                    <line x1="65.88" y1="116.79" x2="65.71" y2="114.8" />
-                    <line x1="61" y1="117" x2="61" y2="115" />
-                    <line x1="56.12" y1="116.79" x2="56.3" y2="114.8" />
-                    <line x1="51.28" y1="116.15" x2="51.63" y2="114.18" />
-                    <line x1="46.51" y1="115.1" x2="47.03" y2="113.16" />
-                    <line x1="41.85" y1="113.63" x2="42.53" y2="111.75" />
-                    <line x1="37.34" y1="111.76" x2="38.18" y2="109.95" />
-                    <line x1="33" y1="109.5" x2="34" y2="107.77" />
-                </g>
-                
-                <!-- Main pizza with class for animation -->
-                <g class="pizza-whole">
-                    <!-- Center pepperoni -->
-                    <circle cx="61" cy="60.8" r="8" fill="#CD2D36" stroke="#FEA202" stroke-miterlimit="10" stroke-width="2"/>
-                    
-                    <!-- Some inner details -->
-                    <circle cx="61" cy="61" r="48.2" fill="none" stroke="#FEA202" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="16 10 8 4"/>
-                </g>
-            </svg>
-        </div>
-        <h2 class="pizza-notification-text">خواردنەکەت بەم نزیکانە ئامادە دەکرێت! 🍕</h2>
-        <p class="pizza-notification-subtext">ئێمە ئێستا خواردنەکەت ئامادە دەکەین و لە ماوەی ١٥-٢٠ خولەکدا بۆ مێزی ژمارە <span id="selectedTableNumber">٠</span> دەیھێنین</p>
-    </div>
-
-    <script>
-        // KEEPING ALL ORIGINAL MENU DATA - ONLY CHANGING THE LOGO
-        const menuData = {
-            pizza: [
-                { 
-                    id: 1, 
-                    name: "پیتزای مەرگەنزا", 
-                    price: 15000, 
-                    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1081&q=80", 
-                    description: "پیتزایەکی کلاسیک بە سۆسی تەماتە، موزەرێلا، بەنێوشکە و ڕەزەنە",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "بەنێوشکە", "ڕەزەنە", "زەیتوون", "بەهارات"],
-                    calories: "٣٢٠"
-                },
-                { 
-                    id: 2, 
-                    name: "پیتزای پێپەرۆنی", 
-                    price: 18000, 
-                    image: "https://tse4.mm.bing.net/th/id/OIP._Tuj6ElUF8jhhcSg41_V_QHaE8?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3", 
-                    description: "پیتزایەکی بەناوبانگ بە سۆسی تەماتە، موزەرێلا و پێپەرۆنی",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "پێپەرۆنی", "زەیتوون", "بەهارات"],
-                    calories: "٣٥٠"
-                },
-                { 
-                    id: 3, 
-                    name: "پیتزای ڤێجی", 
-                    price: 16000, 
-                    image: "https://images.unsplash.com/photo-1595708684082-a173bb3a06c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1046&q=80", 
-                    description: "پیتزایەکی تایبەت بۆ خواردنی گیایی بە کەرەس و فلفل و زەیتوون و قیاز",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "کەرەس", "فلفلی سەوز", "زەیتوون", "قیاز", "کەرەوی بروکلی"],
-                    calories: "٢٨٠"
-                },
-                { 
-                    id: 4, 
-                    name: "پیتزای چیکن", 
-                    price: 17000, 
-                    image: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80", 
-                    description: "پیتزایەکی تایبەت بە مەرغ و سەوزە و سۆسی تایبەت",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "مەرغ", "فلفل", "قیاز", "سۆسی تایبەت"],
-                    calories: "٣٦٠"
-                },
-                { 
-                    id: 5, 
-                    name: "پیتزای سیفیود", 
-                    price: 22000, 
-                    image: "https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1027&q=80", 
-                    description: "پیتزایەکی تایبەت بە ماسی و مەڕووی دەریایی",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "ماسی", "مەڕووی دەریایی", "زەیتوون", "لیمۆ"],
-                    calories: "٣٢٠"
-                },
-                { 
-                    id: 6, 
-                    name: "پیتزای BBQ", 
-                    price: 19000, 
-                    image: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-4.0.3&auto=format&fit=crop&w=1025&q=80", 
-                    description: "پیتزایەکی تایبەت بە سۆسی BBQ و گۆشت",
-                    ingredients: ["سۆسی BBQ", "پەنیری موزەرێلا", "گۆشتی بەفێ", "پیاز", "فلفل"],
-                    calories: "٤٠٠"
-                },
-                { 
-                    id: 7, 
-                    name: "پیتزای هاواای", 
-                    price: 25000, 
-                    image: "https://images.unsplash.com/photo-1552539618-7eec9b4d1796?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80", 
-                    description: "پیتزایەکی تایبەت بە هەموو جۆرە پێکهاتەکان",
-                    ingredients: ["سۆسی تەماتە", "پەنیری موزەرێلا", "پێپەرۆنی", "مەرغ", "بەنێوشکە", "زەیتوون", "فلفل"],
-                    calories: "٤٥٠"
-                }
-            ],
-            burgers: [
-                { 
-                    id: 8, 
-                    name: "بێرگەری کلاسیک", 
-                    price: 12000, 
-                    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1098&q=80", 
-                    description: "بێرگەرێکی کلاسیک بە گۆشتی بەفێ، سەوزە و سۆسی تایبەت",
-                    ingredients: ["گۆشتی بەفێ", "نانی بێرگەر", "سەلاد", "تیکا", "پیاز", "سۆسی تایبەت"],
-                    calories: "٥٦٠"
-                },
-                { 
-                    id: 9, 
-                    name: "بێرگەری پنێر", 
-                    price: 14000, 
-                    image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1068&q=80", 
-                    description: "بێرگەرێکی تایبەت بە پنێر و سەوزە و سۆسی تایبەتی رێستۆرانت",
-                    ingredients: ["گۆشتی بەفێ", "پەنیری چێدار", "نانی بێرگەر", "سەلاد", "تیکا", "سۆسی تایبەت"],
-                    calories: "٦٢٠"
-                },
-                { 
-                    id: 10, 
-                    name: "بێرگەری چیکن", 
-                    price: 13000, 
-                    image: "https://tse2.mm.bing.net/th/id/OIP.MSUHFCBdS_Iggg8dcnZ1PwHaHa?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3", 
-                    description: "بێرگەرێکی تایبەت بە مەرغ و سەوزە و سۆسی تایبەت",
-                    ingredients: ["مەرغ", "نانی بێرگەر", "سەلاد", "تیکا", "پیاز", "سۆسی مایۆ"],
-                    calories: "٤٨٠"
-                },
-                { 
-                    id: 11, 
-                    name: "بێرگەری ڤێجی", 
-                    price: 11000, 
-                    image: "https://tse4.mm.bing.net/th/id/OIP.s07UsAo90pfNbIUBM-OTbAHaHa?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3", 
-                    description: "بێرگەرێکی تایبەت بۆ خواردنی گیایی بە سەوزە",
-                    ingredients: ["پەتاتە", "نانی بێرگەر", "سەلاد", "تیکا", "پیاز", "سۆسی ڤێجی"],
-                    calories: "٣٨٠"
-                },
-                { 
-                    id: 12, 
-                    name: "بێرگەری دووبڵ", 
-                    price: 18000, 
-                    image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1115&q=80", 
-                    description: "بێرگەرێکی گەورە بە دوو پارچە گۆشت",
-                    ingredients: ["٢ پارچە گۆشتی بەفێ", "نانی بێرگەر", "سەلاد", "تیکا", "پیاز", "سۆسی تایبەت"],
-                    calories: "٨٥٠"
-                }
-            ],
-            drinks: [
-                { 
-                    id: 13, 
-                    name: "کۆلا", 
-                    price: 2500, 
-                    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "خواردنەوەیەکی گازی بەتام و خوێشەویست بۆ هاوپێچی خواردن",
-                    ingredients: ["ئاوە سۆدا", "شەکر", "رەنگ و تامی تایبەت"],
-                    calories: "١٤٠"
-                },
-                { 
-                    id: 14, 
-                    name: "لیمۆناد", 
-                    price: 3000, 
-                    image: "https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80", 
-                    description: "خواردنەوەیەکی تازە و سارد بە لیمۆ و شەکر",
-                    ingredients: ["لیمۆ", "شەکر", "ئاو"],
-                    calories: "١٢٠"
-                },
-                { 
-                    id: 15, 
-                    name: "ئەیسی تی", 
-                    price: 2000, 
-                    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "خواردنەوەیەکی سارد و خوێشەویست بە تی و لیمۆ",
-                    ingredients: ["تی", "لیمۆ", "شەکر"],
-                    calories: "٩٠"
-                },
-                { 
-                    id: 16, 
-                    name: "ئاوەڕێ", 
-                    price: 1500, 
-                    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "خواردنەوەیەکی گازی بەتام و خوێشەویست",
-                    ingredients: ["ئاوە سۆدا", "شەکر", "رەنگ و تامی تایبەت"],
-                    calories: "١٥٠"
-                },
-                { 
-                    id: 17, 
-                    name: "ئاوەمیوە", 
-                    price: 3500, 
-                    image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80", 
-                    description: "خواردنەوەیەکی تازە بە میوەی جیاواز",
-                    ingredients: ["میوەی تازە", "شەکر", "ئاو"],
-                    calories: "١٨٠"
-                },
-                { 
-                    id: 18, 
-                    name: "سەربستە", 
-                    price: 4000, 
-                    image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80", 
-                    description: "خواردنەوەیەکی تایبەت بە سەربستە",
-                    ingredients: ["شیر", "سەربستە", "شەکر"],
-                    calories: "٢٢٠"
-                }
-            ],
-            appetizers: [
-                { 
-                    id: 19, 
-                    name: "پەنێر و کراکەر", 
-                    price: 6000, 
-                    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80", 
-                    description: "پەنێرێکی تازە لەگەڵ کراکەری خانەوادە",
-                    ingredients: ["پەنیری چێدار", "کراکەر", "زەیتوون", "بەهارات"],
-                    calories: "٢٨٠"
-                },
-                { 
-                    id: 20, 
-                    name: "سەلاد", 
-                    price: 5000, 
-                    image: "https://images.unsplash.com/photo-1626700051175-6818013e0571?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80", 
-                    description: "سەلادێکی تازە بە کەرەس و گوێز و سەوزە و سۆسی تایبەت",
-                    ingredients: ["کەرەس", "گوێز", "سەلاد", "سۆسی تایبەت"],
-                    calories: "١٨٠"
-                },
-                { 
-                    id: 21, 
-                    name: "فرێنچ فرای", 
-                    price: 4000, 
-                    image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "فرێنچ فرایێکی تازە و خۆشبەرز",
-                    ingredients: ["پەتاتە", "روون", "خوێ"],
-                    calories: "٣٦٠"
-                },
-                { 
-                    id: 22, 
-                    name: "چیکن وینگ", 
-                    price: 8000, 
-                    image: "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80", 
-                    description: "چیکن وینگێکی تازە و خۆشبەرز بە سۆسی تایبەت",
-                    ingredients: ["مەرغ", "سۆسی تایبەت", "بەهارات"],
-                    calories: "٤٢٠"
-                },
-                { 
-                    id: 23, 
-                    name: "ئۆنیان ڕینگ", 
-                    price: 5000, 
-                    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "ئۆنیان ڕینگێکی تازە و خۆشبەرز",
-                    ingredients: ["پیاز", "آرد", "روون"],
-                    calories: "٣٠٠"
-                },
-                { 
-                    id: 24, 
-                    name: "مۆزارێلا ستیک", 
-                    price: 7000, 
-                    image: "https://images.unsplash.com/photo-1594489573857-4d0cafe979bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "مۆزارێلا ستیکێکی تازە و خۆشبەرز",
-                    ingredients: ["پەنیری موزەرێلا", "آرد", "روون"],
-                    calories: "٣٨٠"
-                }
-            ],
-            desserts: [
-                { 
-                    id: 25, 
-                    name: "چیزکەیک", 
-                    price: 8000, 
-                    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "چیزکەیکی تایبەت بە سۆسی چێژلە و چۆکلەت",
-                    ingredients: ["پەنیر", "شەکر", "چێژلە", "چۆکلەت"],
-                    calories: "٤٨٠"
-                },
-                { 
-                    id: 26, 
-                    name: "ئایس کریم", 
-                    price: 4000, 
-                    image: "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80", 
-                    description: "ئایس کریمێکی تازە بە چێژلە و ڤەنیلا و چۆکلەت",
-                    ingredients: ["شیر", "شەکر", "چێژلە", "ڤەنیلا", "چۆکلەت"],
-                    calories: "٢٨٠"
-                },
-                { 
-                    id: 27, 
-                    name: "براونی", 
-                    price: 6000, 
-                    image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1092&q=80", 
-                    description: "براونیێکی تازە و نەرم بە چۆکلەت",
-                    ingredients: ["چۆکلەت", "شەکر", "آرد", "هێلکە"],
-                    calories: "٤٢٠"
-                },
-                { 
-                    id: 28, 
-                    name: "کووکی", 
-                    price: 3000, 
-                    image: "https://images.unsplash.com/photo-1624352902304-5b5a1a4b8c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80", 
-                    description: "کووکیێکی تازە و خۆشبەرز بە چۆکلەت",
-                    ingredients: ["آرد", "شەکر", "چۆکلەت", "هێلکە"],
-                    calories: "٢٠٠"
-                },
-                { 
-                    id: 29, 
-                    name: "دۆنات", 
-                    price: 2500, 
-                    image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80", 
-                    description: "دۆناتێکی تازە و خۆشبەرز بە چێژلە",
-                    ingredients: ["آرد", "شەکر", "چێژلە", "روون"],
-                    calories: "٢٤٠"
-                },
-                { 
-                    id: 30, 
-                    name: "مافین", 
-                    price: 3500, 
-                    image: "https://images.unsplash.com/photo-1624352902304-5b5a1a4b8c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80", 
-                    description: "مافینێکی تازە و نەرم بە چۆکلەت",
-                    ingredients: ["آرد", "شەکر", "چۆکلەت", "هێلکە"],
-                    calories: "٣٢٠"
-                },
-                { 
-                    id: 31, 
-                    name: "پای", 
-                    price: 7000, 
-                    image: "https://images.unsplash.com/photo-1535920527002-b35e96722206?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80", 
-                    description: "پایێکی تازە بە میوە",
-                    ingredients: ["آرد", "شەکر", "میوە", "هێلکە"],
-                    calories: "٣٦٠"
-                },
-                { 
-                    id: 32, 
-                    name: "وافی", 
-                    price: 5000, 
-                    image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80", 
-                    description: "وافیێکی تازە و خۆشبەرز بە سۆسی چۆکلەت",
-                    ingredients: ["آرد", "شەکر", "چۆکلەت", "کەرە"],
-                    calories: "٣٨٠"
-                }
-            ]
-        };
-
-        // Cart functionality
-        let cart = [];
-        let selectedTable = null;
-        
-        const cartIcon = document.getElementById('cartIcon');
-        const cartModal = document.getElementById('cartModal');
-        const closeCart = document.getElementById('closeCart');
-        const cartItems = document.getElementById('cartItems');
-        const totalPrice = document.getElementById('totalPrice');
-        const orderBtn = document.getElementById('orderBtn'); // Changed from checkoutBtn
-        const cartCount = document.querySelector('.cart-count');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        // Product modal elements
-        const productModal = document.getElementById('productModal');
-        const closeProductModal = document.getElementById('closeProductModal');
-        const productModalTitle = document.getElementById('productModalTitle');
-        const productModalImage = document.getElementById('productModalImage');
-        const productModalPrice = document.getElementById('productModalPrice');
-        const productModalDescription = document.getElementById('productModalDescription');
-        const productModalIngredients = document.getElementById('productModalIngredients');
-        const productModalCalories = document.getElementById('productModalCalories');
-        const modalAddToCart = document.getElementById('modalAddToCart');
-        const mainContent = document.getElementById('mainContent');
-
-        // Table selection elements
-        const tableModal = document.getElementById('tableModal');
-        const closeTable = document.getElementById('closeTable');
-        const tableGrid = document.getElementById('tableGrid');
-        const confirmTableBtn = document.getElementById('confirmTableBtn');
-        const pizzaNotification = document.getElementById('pizzaNotification');
-        const selectedTableNumber = document.getElementById('selectedTableNumber');
-
-        let currentProduct = null;
-
-        // Initialize menu items
-        function initializeMenu() {
-            for (const category in menuData) {
-                const container = document.querySelector(`#${category} .menu-items`);
-                container.innerHTML = '';
-                
-                menuData[category].forEach(item => {
-                    const menuItem = document.createElement('div');
-                    menuItem.className = 'menu-item';
-                    menuItem.setAttribute('data-id', item.id);
-                    menuItem.innerHTML = `
-                        <div class="item-image" style="background-image: url('${item.image}')"></div>
-                        <div class="item-content">
-                            <div class="item-header">
-                                <h3 class="item-name">${item.name}</h3>
-                                <span class="item-price">${formatPrice(item.price)} دینار</span>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <!-- Step 1: Location -->
+                    <div class="form-step" id="step1">
+                        <div class="form-group">
+                            <label class="form-label">شوێن</label>
+                            <p>پێویستە شوێنەکەت ڕابگەیەنیت یان خۆت دەیھێنیتە کەبابخانە</p>
+                            
+                            <div class="location-options">
+                                <div class="location-option" data-type="delivery">
+                                    <i class="fas fa-truck"></i>
+                                    <h4>ناردن</h4>
+                                    <p>کەبابەکان دەنێردرێن بۆ شوێنەکەت</p>
+                                </div>
+                                <div class="location-option active" data-type="pickup">
+                                    <i class="fas fa-store"></i>
+                                    <h4>هێنان</h4>
+                                    <p>خۆت دەیھێنیتە کەبابخانە</p>
+                                </div>
                             </div>
-                            <p class="item-description">${item.description}</p>
-                            <button class="add-to-cart" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}" data-image="${item.image}">
-                                <i class="fas fa-plus"></i> زیادکردن بە سەبەتە
+                            
+                            <input type="hidden" id="locationType" name="locationType" value="pickup">
+                            
+                            <div class="form-group" id="locationInputGroup">
+                                <label class="form-label" for="location">ناونیشان</label>
+                                <button type="button" class="btn btn-outline" id="getLocationBtn" style="width: 100%; margin-bottom: 10px;">
+                                    <i class="fas fa-map-marker-alt"></i> بینینی شوێنەکەم بە خۆکار
+                                </button>
+                                <p style="text-align: center; margin: 10px 0; color: #666;">یان</p>
+                                <input type="text" class="form-control" id="location" name="location" placeholder="ناونیشانی تەواو" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">کاتی داواکاری</label>
+                            <div class="datetime-picker">
+                                <input type="date" class="form-control" id="orderDate" name="orderDate" required>
+                                <input type="time" class="form-control" id="orderTime" name="orderTime" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">ئاستی گەرمی (بۆ هەموو کەبابەکان)</label>
+                            <div class="spice-selector">
+                                <div class="spice-dots">
+                                    <div class="spice-dot" data-level="0"></div>
+                                    <div class="spice-dot" data-level="1"></div>
+                                    <div class="spice-dot active" data-level="2"></div>
+                                    <div class="spice-dot" data-level="3"></div>
+                                    <div class="spice-dot" data-level="4"></div>
+                                    <div class="spice-dot" data-level="5"></div>
+                                </div>
+                                <span class="spice-level">مامناوەند</span>
+                                <input type="hidden" id="spiceLevel" name="spiceLevel" value="2">
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: left;">
+                            <button type="button" class="btn btn-primary" id="nextStepBtn">داھاتوو <i class="fas fa-arrow-left"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Notes -->
+                    <div class="form-step" id="step2" style="display: none;">
+                        <div class="form-group">
+                            <label class="form-label">تێبینیەکان (هەڵبژاردەیی)</label>
+                            <p>تێبینیەکانت لەسەر داواکاریەکە بنووسە:</p>
+                            
+                            <div class="notes-list">
+                                <div class="note-option" data-note="توماتی زیاتر">توماتی زیاتر</div>
+                                <div class="note-option" data-note="پیازی کەمتر">پیازی کەمتر</div>
+                                <div class="note-option" data-note="بەهارەتی زیاتر">بەهارەتی زیاتر</div>
+                                <div class="note-option" data-note="لیمۆی زیاتر">لیمۆی زیاتر</div>
+                                <div class="note-option" data-note="بەرەکانی نەرم">بەرەکانی نەرم</div>
+                                <div class="note-option" data-note="گۆشتی توند">گۆشتی توند</div>
+                            </div>
+                            
+                            <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="تێبینیەکانی تری خۆت لێرە بنووسە..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">ژمارەی مۆبایل (هەڵبژاردەیی)</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="٠٧٧٠ ١٢٣ ٤٥٦٧">
+                            <small>تەنیا ئەگەر دەتەوێت پەیوەندیم پێوەبکەین بۆ گۆڕانکاری لە داواکاریەکە</small>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between;">
+                            <button type="button" class="btn btn-outline" id="prevStepBtn">
+                                <i class="fas fa-arrow-right"></i> پێشوو
+                            </button>
+                            <button type="submit" class="btn btn-primary" id="submitOrderBtn">
+                                <i class="fas fa-check"></i> ناردنی داواکاری
                             </button>
                         </div>
-                    `;
-                    container.appendChild(menuItem);
-                });
-            }
-            
-            // Add event listeners to all add-to-cart buttons
-            document.querySelectorAll('.add-to-cart').forEach(button => {
-                button.addEventListener('click', addToCart);
-            });
-
-            // Add event listeners to menu items for product detail view
-            document.querySelectorAll('.menu-item').forEach(item => {
-                item.addEventListener('click', (e) => {
-                    // Don't open product modal if clicking the add to cart button
-                    if (!e.target.closest('.add-to-cart')) {
-                        const productId = parseInt(item.getAttribute('data-id'));
-                        openProductModal(getProductById(productId));
-                    }
-                });
-            });
-        }
-
-        // Initialize table selection
-        function initializeTableSelection() {
-            tableGrid.innerHTML = '';
-            for (let i = 1; i <= 25; i++) {
-                const tableBtn = document.createElement('button');
-                tableBtn.className = 'table-btn';
-                tableBtn.textContent = i;
-                tableBtn.setAttribute('data-table', i);
-                tableBtn.addEventListener('click', () => selectTable(i));
-                tableGrid.appendChild(tableBtn);
-            }
-        }
-
-        // Select table function
-        function selectTable(tableNumber) {
-            // Remove selected class from all buttons
-            document.querySelectorAll('.table-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            
-            // Add selected class to clicked button
-            const selectedBtn = document.querySelector(`.table-btn[data-table="${tableNumber}"]`);
-            selectedBtn.classList.add('selected');
-            
-            selectedTable = tableNumber;
-            confirmTableBtn.disabled = false;
-        }
-
-        // Get product by ID
-        function getProductById(id) {
-            for (const category in menuData) {
-                const product = menuData[category].find(item => item.id === id);
-                if (product) return product;
-            }
-            return null;
-        }
-
-        // Open product modal
-        function openProductModal(product) {
-            if (!product) return;
-            
-            currentProduct = product;
-            
-            // Update modal content
-            productModalTitle.textContent = product.name;
-            productModalImage.style.backgroundImage = `url('${product.image}')`;
-            productModalPrice.textContent = `${formatPrice(product.price)} دینار`;
-            productModalDescription.textContent = product.description;
-            
-            // Update ingredients
-            productModalIngredients.innerHTML = '';
-            product.ingredients.forEach(ingredient => {
-                const li = document.createElement('li');
-                li.textContent = ingredient;
-                productModalIngredients.appendChild(li);
-            });
-            
-            // Update calories
-            productModalCalories.textContent = `${product.calories} کالۆری`;
-            
-            // Add blur to main content only (not header or modal)
-            mainContent.classList.add('blur-background');
-            
-            // Show modal with slide animation
-            productModal.style.display = 'block';
-            setTimeout(() => {
-                productModal.classList.add('active');
-            }, 10);
-        }
-
-        // Close product modal
-        function closeProductModalFunc() {
-            productModal.classList.remove('active');
-            mainContent.classList.remove('blur-background');
-            
-            // Reset after animation
-            setTimeout(() => {
-                productModal.style.display = 'none';
-            }, 400);
-        }
-
-        // Add to cart functionality
-        function addToCart(e) {
-            e.stopPropagation(); // Prevent triggering the product modal
-            
-            const button = e.currentTarget;
-            const id = button.getAttribute('data-id');
-            const name = button.getAttribute('data-name');
-            const price = parseInt(button.getAttribute('data-price'));
-            const image = button.getAttribute('data-image');
-
-            // Check if item already in cart
-            const existingItem = cart.find(item => item.id === id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id,
-                    name,
-                    price,
-                    image,
-                    quantity: 1
-                });
-            }
-
-            updateCartCount();
-            showAddedToCartMessage(name);
-        }
-
-        // Add to cart from modal
-        modalAddToCart.addEventListener('click', () => {
-            if (currentProduct) {
-                // Check if item already in cart
-                const existingItem = cart.find(item => item.id === currentProduct.id.toString());
+                    </div>
+                </form>
                 
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        id: currentProduct.id.toString(),
-                        name: currentProduct.name,
-                        price: currentProduct.price,
-                        image: currentProduct.image,
-                        quantity: 1
-                    });
-                }
+                <!-- Success Animation -->
+                <div class="success-animation" id="successAnimation" style="display: none;">
+                    <div class="checkmark"></div>
+                    <h3>داواکاریەکەت پێشکەش کرا!</h3>
+                    <p>داواکاریەکەت بە سەرکەوتوویی نێردرا. ئەگەر ناردنەکەت هەڵبژاردبێت، کەبابەکان بەم کاتەدا دەگاتە لایت: <span id="deliveryTime"></span></p>
+                    <p>ژمارەی داواکاریەکەت: <strong id="orderNumber"></strong></p>
+                    <p>سوپاس بۆ داواکاری لە کەبابخانەی وەستا ئەحمەد!</p>
+                    <button class="btn btn-primary" id="closeSuccessBtn" style="margin-top: 1.5rem;">
+                        <i class="fas fa-home"></i> گەڕانەوە بۆ سەرەتا
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                updateCartCount();
-                showAddedToCartMessage(currentProduct.name);
-                closeProductModalFunc();
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- JavaScript -->
+    <script>
+        // Formspree Configuration
+        const FORMSPREE_URL = "https://formspree.io/f/xbjnwpae"; // Replace with your actual Formspree ID
+        
+        // Global Variables
+        let cart = JSON.parse(localStorage.getItem('wastaCart')) || [];
+        let loyaltyPoints = parseInt(localStorage.getItem('wastaLoyaltyPoints')) || 0;
+        let favoriteItems = JSON.parse(localStorage.getItem('wastaFavorites')) || [];
+        let orders = JSON.parse(localStorage.getItem('wastaOrders')) || [];
+        
+        // Menu Data
+        const menuItems = [
+            {
+                id: 1,
+                name: "کەبابی گۆشتی",
+                description: "گۆشتی بەراز بە هەڵبژاردەی باشترین بەهارەت",
+                price: 6000,
+                category: "kebab",
+                image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 2
+            },
+            {
+                id: 2,
+                name: "کەبابی مەریشک",
+                description: "مەریشکی تازە بە هەمان ڕێگەی تایبەتی وەستا",
+                price: 5500,
+                category: "kebab",
+                image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 2
+            },
+            {
+                id: 3,
+                name: "تکای مەریشک",
+                description: "مەریشک بە شێوازێکی تایبەت و بە تامێکی نایاب",
+                price: 5000,
+                category: "tika",
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 2
+            },
+            {
+                id: 4,
+                name: "تکای جگەر",
+                description: "جگەری تازە بە تامێکی تایبەت",
+                price: 4500,
+                category: "tika",
+                image: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w-600&q=80",
+                spiceLevel: 2
+            },
+            {
+                id: 5,
+                name: "کەبابی گۆشتی بەراز و مەریشک",
+                description: "هاوتێکی نایاب لە گۆشتی بەراز و مەریشک",
+                price: 7000,
+                category: "special",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 3
+            },
+            {
+                id: 6,
+                name: "تکای گۆشتی بەراز",
+                description: "گۆشتی بەراز بە شێوازێکی تایبەت",
+                price: 6500,
+                category: "tika",
+                image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 2
+            },
+            {
+                id: 7,
+                name: "کەبابی گۆشتی بەراز بە هەواڵی نایاب",
+                description: "گۆشتی بەراز بە هەواڵی نایاب و تامێکی تایبەت",
+                price: 8000,
+                category: "special",
+                image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 4
+            },
+            {
+                id: 8,
+                name: "تکای مەریشک بە هەواڵی نایاب",
+                description: "مەریشک بە هەواڵی نایاب و تامێکی تایبەت",
+                price: 6000,
+                category: "tika",
+                image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 3
+            },
+            {
+                id: 9,
+                name: "کەبابی گۆشتی بەراز بە جگەر",
+                description: "هاوتێک لە گۆشتی بەراز و جگەر",
+                price: 7500,
+                category: "special",
+                image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 3
+            },
+            {
+                id: 10,
+                name: "تکای جگەر بە هەواڵی نایاب",
+                description: "جگەر بە هەواڵی نایاب و تامێکی تایبەت",
+                price: 5500,
+                category: "tika",
+                image: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 4
+            },
+            {
+                id: 11,
+                name: "پەنجەی وەستا",
+                description: "تایبەتترین کەباب بە ناوی وەستا ئەحمەد",
+                price: 9000,
+                category: "special",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                spiceLevel: 2
             }
-        });
-
-        // Update cart count in header
-        function updateCartCount() {
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = totalItems;
-        }
-
-        // Show "added to cart" message
-        function showAddedToCartMessage(itemName) {
-            // Create a temporary notification
-            const notification = document.createElement('div');
-            notification.textContent = `${itemName} زیادکرا بە سەبەتە`;
-            notification.style.position = 'fixed';
-            notification.style.bottom = '20px';
-            notification.style.left = '50%';
-            notification.style.transform = 'translateX(-50%)';
-            notification.style.backgroundColor = 'var(--accent-blue)';
-            notification.style.color = 'white';
-            notification.style.padding = '10px 20px';
-            notification.style.borderRadius = '5px';
-            notification.style.zIndex = '1000';
-            notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-            notification.style.fontSize = '14px';
+        ];
+        
+        // DOM Elements
+        const sideProfile = document.getElementById('sideProfile');
+        const menuItemsContainer = document.getElementById('menuItems');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const emptyCartMessage = document.getElementById('emptyCartMessage');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const orderBtn = document.getElementById('orderBtn');
+        const clearCartBtn = document.getElementById('clearCartBtn');
+        const scheduleOrderBtn = document.getElementById('scheduleOrderBtn');
+        const orderModal = document.getElementById('orderModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const orderForm = document.getElementById('orderForm');
+        const locationOptions = document.querySelectorAll('.location-option');
+        const getLocationBtn = document.getElementById('getLocationBtn');
+        const locationInput = document.getElementById('location');
+        const nextStepBtn = document.getElementById('nextStepBtn');
+        const prevStepBtn = document.getElementById('prevStepBtn');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const submitOrderBtn = document.getElementById('submitOrderBtn');
+        const successAnimation = document.getElementById('successAnimation');
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+        const toast = document.getElementById('toast');
+        const loyaltyPointsElement = document.getElementById('pointsDisplay');
+        const spiceDots = document.querySelectorAll('.spice-dot');
+        const spiceLevelInput = document.getElementById('spiceLevel');
+        const noteOptions = document.querySelectorAll('.note-option');
+        const notesTextarea = document.getElementById('notes');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const adminPanel = document.getElementById('adminPanel');
+        const refreshOrdersBtn = document.getElementById('refreshOrdersBtn');
+        const ordersList = document.getElementById('ordersList');
+        const deliveryTimeElement = document.getElementById('deliveryTime');
+        const orderNumberElement = document.getElementById('orderNumber');
+        
+        // Initialize the page
+        function init() {
+            // Show admin panel if URL has admin parameter
+            if (window.location.href.includes('?admin')) {
+                adminPanel.classList.add('active');
+            }
             
-            document.body.appendChild(notification);
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('orderDate').min = today;
             
-            // Remove after 2 seconds
-            setTimeout(() => {
-                document.body.removeChild(notification);
-            }, 2000);
+            // Set default time to next hour
+            const nextHour = new Date();
+            nextHour.setHours(nextHour.getHours() + 1);
+            document.getElementById('orderTime').value = `${nextHour.getHours().toString().padStart(2, '0')}:${nextHour.getMinutes().toString().padStart(2, '0')}`;
+            
+            // Render menu
+            renderMenuItems();
+            
+            // Render cart
+            renderCart();
+            
+            // Update loyalty points display
+            updateLoyaltyPoints();
+            
+            // Load orders from localStorage
+            loadOrders();
+            
+            // Initialize event listeners
+            setupEventListeners();
+            
+            // Setup scroll animation for side profile
+            setupScrollAnimation();
         }
-
-        // Update cart display
-        function updateCartDisplay() {
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="empty-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>سەبەتەکەت بەتاڵە</p>
+        
+        // Setup scroll animation for side profile
+        function setupScrollAnimation() {
+            let hasAnimated = false;
+            
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                
+                // Animate side profile after 2-2.8 seconds of scrolling
+                if (scrollPosition > 300 && !hasAnimated) {
+                    setTimeout(() => {
+                        sideProfile.classList.add('show');
+                        hasAnimated = true;
+                    }, 2500); // 2.5 seconds
+                }
+                
+                // For mobile, show side profile immediately when scrolled into view
+                if (window.innerWidth <= 768) {
+                    const profilePosition = sideProfile.getBoundingClientRect();
+                    if (profilePosition.top < window.innerHeight && !hasAnimated) {
+                        sideProfile.classList.add('show');
+                        hasAnimated = true;
+                    }
+                }
+            });
+            
+            // Trigger on load if already scrolled
+            if (window.scrollY > 300) {
+                setTimeout(() => {
+                    sideProfile.classList.add('show');
+                    hasAnimated = true;
+                }, 500);
+            }
+        }
+        
+        // Render menu items
+        function renderMenuItems(filter = 'all') {
+            menuItemsContainer.innerHTML = '';
+            
+            const filteredItems = filter === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === filter);
+            
+            filteredItems.forEach(item => {
+                const isFavorite = favoriteItems.includes(item.id);
+                const itemElement = document.createElement('div');
+                itemElement.className = 'menu-item';
+                itemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="item-image">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">${item.name}</h3>
+                            <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-id="${item.id}">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        <p class="item-description">${item.description}</p>
+                        <div class="spice-selector">
+                            <div class="spice-level">ئاستی گەرمی: ${getSpiceLevelText(item.spiceLevel)}</div>
+                        </div>
+                        <div class="item-controls">
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                <span class="quantity" id="quantity-${item.id}">0</span>
+                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            </div>
+                            <div>
+                                <span class="item-price">${item.price.toLocaleString()} دینار</span>
+                                <button class="add-to-cart" data-id="${item.id}">
+                                    <i class="fas fa-cart-plus"></i> زیادکردن
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 `;
-                totalPrice.textContent = '٠ دینار';
+                menuItemsContainer.appendChild(itemElement);
+            });
+            
+            // Update quantities in menu to match cart
+            updateMenuQuantities();
+            
+            // Add event listeners to menu items
+            addMenuEventListeners();
+        }
+        
+        // Get spice level text
+        function getSpiceLevelText(level) {
+            const levels = ['هیچ', 'زۆر کەم', 'کەم', 'مامناوەند', 'تۆزێک گەرم', 'زۆر گەرم'];
+            return levels[level] || 'مامناوەند';
+        }
+        
+        // Update quantities in menu to match cart
+        function updateMenuQuantities() {
+            cart.forEach(item => {
+                const quantityElement = document.getElementById(`quantity-${item.id}`);
+                if (quantityElement) {
+                    quantityElement.textContent = item.quantity;
+                }
+            });
+        }
+        
+        // Add event listeners to menu items
+        function addMenuEventListeners() {
+            // Favorite buttons
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = parseInt(this.getAttribute('data-id'));
+                    toggleFavorite(itemId);
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Increase quantity buttons
+            document.querySelectorAll('.quantity-btn.increase').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = parseInt(this.getAttribute('data-id'));
+                    increaseQuantity(itemId);
+                });
+            });
+            
+            // Decrease quantity buttons
+            document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = parseInt(this.getAttribute('data-id'));
+                    decreaseQuantity(itemId);
+                });
+            });
+            
+            // Add to cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const itemId = parseInt(this.getAttribute('data-id'));
+                    addToCart(itemId);
+                });
+            });
+        }
+        
+        // Toggle favorite item
+        function toggleFavorite(itemId) {
+            const index = favoriteItems.indexOf(itemId);
+            if (index === -1) {
+                favoriteItems.push(itemId);
+                showToast('بەخەڵاتەکە زیادکرا بۆ بەخەڵاتەکان', 'success');
+            } else {
+                favoriteItems.splice(index, 1);
+                showToast('بەخەڵاتەکە سڕدرایەوە لە بەخەڵاتەکان', 'info');
+            }
+            localStorage.setItem('wastaFavorites', JSON.stringify(favoriteItems));
+        }
+        
+        // Increase quantity in menu
+        function increaseQuantity(itemId) {
+            const quantityElement = document.getElementById(`quantity-${itemId}`);
+            let quantity = parseInt(quantityElement.textContent);
+            quantity++;
+            quantityElement.textContent = quantity;
+        }
+        
+        // Decrease quantity in menu
+        function decreaseQuantity(itemId) {
+            const quantityElement = document.getElementById(`quantity-${itemId}`);
+            let quantity = parseInt(quantityElement.textContent);
+            if (quantity > 0) {
+                quantity--;
+                quantityElement.textContent = quantity;
+            }
+        }
+        
+        // Add item to cart
+        function addToCart(itemId) {
+            const quantityElement = document.getElementById(`quantity-${itemId}`);
+            const quantity = parseInt(quantityElement.textContent);
+            
+            if (quantity === 0) {
+                showToast('تکایە ژمارەیەک دیاری بکە پێش زیادکردن بۆ سەبەتە', 'error');
                 return;
             }
-
-            let cartHTML = '';
-            let total = 0;
-
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-
-                cartHTML += `
-                    <div class="cart-item">
+            
+            const item = menuItems.find(i => i.id === itemId);
+            const existingItemIndex = cart.findIndex(i => i.id === itemId);
+            
+            if (existingItemIndex !== -1) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: quantity,
+                    spiceLevel: item.spiceLevel
+                });
+            }
+            
+            // Reset quantity in menu
+            quantityElement.textContent = 0;
+            
+            // Update cart in localStorage
+            localStorage.setItem('wastaCart', JSON.stringify(cart));
+            
+            // Update cart display
+            renderCart();
+            
+            // Show success message
+            showToast(`${quantity} ${item.name} زیادکرا بۆ سەبەتە`, 'success');
+        }
+        
+        // Render cart
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'cart-item';
+                    cartItemElement.innerHTML = `
                         <div class="cart-item-info">
-                            <div class="cart-item-image" style="background-image: url('${item.image}')"></div>
+                            <div class="cart-item-name">${item.name}</div>
                             <div class="cart-item-details">
-                                <div class="cart-item-name">${item.name}</div>
-                                <div class="cart-item-price">${formatPrice(item.price)} دینار</div>
+                                <span>نرخ: ${item.price.toLocaleString()} دینار</span>
+                                <span>ئاستی گەرمی: ${getSpiceLevelText(item.spiceLevel)}</span>
                             </div>
                         </div>
                         <div class="cart-item-controls">
-                            <button class="quantity-btn decrease" data-id="${item.id}">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <span class="cart-item-quantity">${item.quantity}</span>
-                            <button class="quantity-btn increase" data-id="${item.id}">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                            <button class="remove-item" data-id="${item.id}">
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease-cart" data-index="${index}">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn increase-cart" data-index="${index}">+</button>
+                            </div>
+                            <div class="cart-item-price">${itemTotal.toLocaleString()} دینار</div>
+                            <button class="quantity-btn remove-item" data-index="${index}" style="background: #ff4444; color: white;">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
-                    </div>
-                `;
-            });
-
-            cartItems.innerHTML = cartHTML;
-            totalPrice.textContent = `${formatPrice(total)} دینار`;
-
-            // Add event listeners to quantity buttons
-            document.querySelectorAll('.increase').forEach(button => {
-                button.addEventListener('click', () => {
-                    const id = button.getAttribute('data-id');
-                    const item = cart.find(item => item.id === id);
-                    item.quantity += 1;
-                    updateCartDisplay();
-                    updateCartCount();
+                    `;
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                
+                // Update total price
+                totalPriceElement.textContent = `${total.toLocaleString()} دینار`;
+                
+                // Calculate loyalty points
+                const newPoints = Math.floor(total / 1000);
+                if (newPoints > 0 && loyaltyPoints < newPoints) {
+                    loyaltyPoints = newPoints;
+                    localStorage.setItem('wastaLoyaltyPoints', loyaltyPoints.toString());
+                    updateLoyaltyPoints();
+                }
+            }
+            
+            // Add event listeners to cart items
+            addCartEventListeners();
+        }
+        
+        // Add event listeners to cart items
+        function addCartEventListeners() {
+            // Increase quantity in cart
+            document.querySelectorAll('.increase-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cart[index].quantity++;
+                    localStorage.setItem('wastaCart', JSON.stringify(cart));
+                    renderCart();
                 });
             });
-
-            document.querySelectorAll('.decrease').forEach(button => {
-                button.addEventListener('click', () => {
-                    const id = button.getAttribute('data-id');
-                    const item = cart.find(item => item.id === id);
-                    if (item.quantity > 1) {
-                        item.quantity -= 1;
+            
+            // Decrease quantity in cart
+            document.querySelectorAll('.decrease-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity--;
                     } else {
-                        cart = cart.filter(item => item.id !== id);
+                        cart.splice(index, 1);
                     }
-                    updateCartDisplay();
-                    updateCartCount();
+                    localStorage.setItem('wastaCart', JSON.stringify(cart));
+                    renderCart();
                 });
             });
-
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', () => {
-                    const id = button.getAttribute('data-id');
-                    cart = cart.filter(item => item.id !== id);
-                    updateCartDisplay();
-                    updateCartCount();
+            
+            // Remove item from cart
+            document.querySelectorAll('.remove-item').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const itemName = cart[index].name;
+                    cart.splice(index, 1);
+                    localStorage.setItem('wastaCart', JSON.stringify(cart));
+                    renderCart();
+                    showToast(`${itemName} سڕدرایەوە لە سەبەتە`, 'info');
                 });
             });
         }
-
-        // Format price with commas
-        function formatPrice(price) {
-            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "،");
+        
+        // Update loyalty points display
+        function updateLoyaltyPoints() {
+            loyaltyPointsElement.textContent = `${loyaltyPoints.toLocaleString()} خاڵ`;
         }
-
-        // Order button click (changed from checkout)
-        orderBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                showAddedToCartMessage('سەبەتەکەت بەتاڵە!');
-                return;
-            }
+        
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            toast.textContent = message;
+            toast.className = 'toast';
+            toast.classList.add(type);
+            toast.classList.add('show');
             
-            // Close cart modal
-            cartModal.style.display = 'none';
-            
-            // Reset table selection
-            selectedTable = null;
-            document.querySelectorAll('.table-btn').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            confirmTableBtn.disabled = true;
-            
-            // Show table selection modal
-            tableModal.style.display = 'flex';
-        });
-
-        // Confirm table button
-        confirmTableBtn.addEventListener('click', () => {
-            if (!selectedTable) {
-                showAddedToCartMessage('تکایە مێزێک هەڵبژێرە!');
-                return;
-            }
-            
-            // Close table modal
-            tableModal.style.display = 'none';
-            
-            // Show pizza notification
-            selectedTableNumber.textContent = selectedTable;
-            pizzaNotification.style.display = 'flex';
-            
-            // Clear cart after 5 seconds and show success message
             setTimeout(() => {
-                // Show success message
-                showAddedToCartMessage('داواکاریەکەت پێشکەش کرا!');
-                
-                // Clear cart
-                cart = [];
-                updateCartDisplay();
-                updateCartCount();
-                
-                // Hide pizza notification after 5 more seconds
-                setTimeout(() => {
-                    pizzaNotification.style.display = 'none';
-                }, 5000);
-            }, 3000);
-        });
-
-        // Close table modal
-        closeTable.addEventListener('click', () => {
-            tableModal.style.display = 'none';
-        });
-
-        // Category filtering
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        const menuSections = document.querySelectorAll('.menu-section');
-
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.getAttribute('data-category');
-                
-                // Update active button
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Show/hide sections
-                if (category === 'all') {
-                    menuSections.forEach(section => section.style.display = 'block');
-                } else {
-                    menuSections.forEach(section => {
-                        if (section.id === category) {
-                            section.style.display = 'block';
-                        } else {
-                            section.style.display = 'none';
-                        }
-                    });
+                toast.classList.remove('show');
+            }, 4000);
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Order button
+            orderBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    showToast('سەبەتەکەت بەتاڵە! پێش داواکاری کەباب زیادبکە', 'error');
+                    return;
+                }
+                orderModal.classList.add('active');
+            });
+            
+            // Schedule order button
+            scheduleOrderBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    showToast('سەبەتەکەت بەتاڵە! پێش داواکاری کەباب زیادبکە', 'error');
+                    return;
+                }
+                orderModal.classList.add('active');
+            });
+            
+            // Clear cart button
+            clearCartBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    showToast('سەبەتەکەت بەتاڵە!', 'info');
+                    return;
                 }
                 
-                // Scroll to menu
-                document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+                if (confirm('دڵنیایت دەتەوێت هەموو کەبابەکان لە سەبەتە بسڕیتەوە؟')) {
+                    cart = [];
+                    localStorage.setItem('wastaCart', JSON.stringify(cart));
+                    renderCart();
+                    showToast('سەبەتە پاککرایەوە', 'success');
+                }
             });
-        });
-
-        // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                mainNav.classList.remove('active');
+            
+            // Close modal button
+            closeModalBtn.addEventListener('click', function() {
+                orderModal.classList.remove('active');
+                resetForm();
+            });
+            
+            // Location options
+            locationOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    locationOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('locationType').value = this.getAttribute('data-type');
+                    
+                    // Update location input requirement
+                    if (this.getAttribute('data-type') === 'pickup') {
+                        locationInput.required = false;
+                        locationInput.placeholder = "ناونیشان (هەڵبژاردەیی بۆ هێنان)";
+                    } else {
+                        locationInput.required = true;
+                        locationInput.placeholder = "ناونیشانی تەواو (پێویستە)";
+                    }
+                });
+            });
+            
+            // Get location button
+            getLocationBtn.addEventListener('click', function() {
+                if (!navigator.geolocation) {
+                    showToast('بەزاندنی شوێن پاڵپشتی ناکرێت لەم وێبگەڕە', 'error');
+                    return;
+                }
+                
+                showToast('شوێنەکەت دەدۆزرێتەوە...', 'info');
+                
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        
+                        // Use OpenStreetMap Nominatim for reverse geocoding
+                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                const address = data.display_name || `${latitude}, ${longitude}`;
+                                locationInput.value = address;
+                                showToast('شوێنەکەت دۆزرایەوە و زیادکرا', 'success');
+                            })
+                            .catch(error => {
+                                console.error('Error getting address:', error);
+                                locationInput.value = `${latitude}, ${longitude}`;
+                                showToast('شوێنەکەت دۆزرایەوە', 'success');
+                            });
+                    },
+                    function(error) {
+                        console.error('Error getting location:', error);
+                        showToast('نەتوانرا شوێنەکەت بدۆزرێتەوە. تکایە دەستبکە بە ناونیشانەکەت', 'error');
+                    }
+                );
+            });
+            
+            // Next step button
+            nextStepBtn.addEventListener('click', function() {
+                // Validate location
+                if (document.getElementById('locationType').value === 'delivery' && !locationInput.value.trim()) {
+                    showToast('تکایە ناونیشانەکەت بنووسە یان شوێنەکەت بدۆزەرەوە', 'error');
+                    return;
+                }
+                
+                // Validate date and time
+                const orderDate = document.getElementById('orderDate').value;
+                const orderTime = document.getElementById('orderTime').value;
+                
+                if (!orderDate || !orderTime) {
+                    showToast('تکایە ڕێکەوت و کاتی داواکاری دیاری بکە', 'error');
+                    return;
+                }
+                
+                // Check if selected time is in the future
+                const selectedDateTime = new Date(`${orderDate}T${orderTime}`);
+                const now = new Date();
+                
+                if (selectedDateTime < now) {
+                    showToast('تکایە کاتێکی داهاتوو دیاری بکە', 'error');
+                    return;
+                }
+                
+                // Proceed to next step
+                step1.style.display = 'none';
+                step2.style.display = 'block';
+            });
+            
+            // Previous step button
+            prevStepBtn.addEventListener('click', function() {
+                step2.style.display = 'none';
+                step1.style.display = 'block';
+            });
+            
+            // Spice level selector
+            spiceDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const level = this.getAttribute('data-level');
+                    spiceDots.forEach(d => d.classList.remove('active'));
+                    this.classList.add('active');
+                    spiceLevelInput.value = level;
+                    
+                    // Update text
+                    const levelText = getSpiceLevelText(parseInt(level));
+                    document.querySelector('.spice-level').textContent = levelText;
+                });
+            });
+            
+            // Note options
+            noteOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    // Add or remove note from textarea
+                    const note = this.getAttribute('data-note');
+                    let currentNotes = notesTextarea.value;
+                    
+                    if (this.classList.contains('active')) {
+                        // Add note
+                        if (currentNotes) {
+                            notesTextarea.value = currentNotes + ', ' + note;
+                        } else {
+                            notesTextarea.value = note;
+                        }
+                    } else {
+                        // Remove note
+                        const notesArray = currentNotes.split(', ').filter(n => n !== note);
+                        notesTextarea.value = notesArray.join(', ');
+                    }
+                });
+            });
+            
+            // Form submission
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitOrder();
+            });
+            
+            // Close success button
+            closeSuccessBtn.addEventListener('click', function() {
+                orderModal.classList.remove('active');
+                resetForm();
+                
+                // Clear cart after successful order
+                cart = [];
+                localStorage.setItem('wastaCart', JSON.stringify(cart));
+                renderCart();
+            });
+            
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const category = this.getAttribute('data-category');
+                    renderMenuItems(category);
+                });
+            });
+            
+            // Refresh orders button
+            refreshOrdersBtn.addEventListener('click', function() {
+                loadOrders();
+                showToast('داواکاریەکان نوێکرانەوە', 'success');
+            });
+            
+            // Close modal when clicking outside
+            orderModal.addEventListener('click', function(e) {
+                if (e.target === orderModal) {
+                    orderModal.classList.remove('active');
+                    resetForm();
+                }
+            });
+        }
+        
+        // Submit order
+        function submitOrder() {
+            // Show loading state
+            submitOrderBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> نێردرێت...';
+            submitOrderBtn.disabled = true;
+            
+            // Gather order data
+            const orderData = {
+                items: cart,
+                total: calculateTotal(),
+                locationType: document.getElementById('locationType').value,
+                location: document.getElementById('location').value,
+                orderDate: document.getElementById('orderDate').value,
+                orderTime: document.getElementById('orderTime').value,
+                spiceLevel: document.getElementById('spiceLevel').value,
+                notes: document.getElementById('notes').value,
+                phone: document.getElementById('phone').value,
+                timestamp: new Date().toISOString(),
+                orderNumber: generateOrderNumber()
+            };
+            
+            // Generate delivery time estimate
+            const deliveryTime = estimateDeliveryTime(orderData);
+            deliveryTimeElement.textContent = deliveryTime;
+            orderNumberElement.textContent = orderData.orderNumber;
+            
+            // Simulate sending to Formspree
+            setTimeout(() => {
+                // Save order to localStorage (simulating Formspree storage)
+                saveOrderToLocalStorage(orderData);
+                
+                // Show success animation
+                step2.style.display = 'none';
+                successAnimation.style.display = 'block';
+                
+                // Reset submit button
+                submitOrderBtn.innerHTML = '<i class="fas fa-check"></i> ناردنی داواکاری';
+                submitOrderBtn.disabled = false;
+                
+                // Update loyalty points
+                const pointsEarned = Math.floor(orderData.total / 1000);
+                loyaltyPoints += pointsEarned;
+                localStorage.setItem('wastaLoyaltyPoints', loyaltyPoints.toString());
+                updateLoyaltyPoints();
+                
+                // Show points earned notification
+                if (pointsEarned > 0) {
+                    setTimeout(() => {
+                        showToast(`سوپاس! تۆ ${pointsEarned} خاڵت بەدەستهێنا بۆ ئەم داواکاریە`, 'success');
+                    }, 1000);
+                }
+            }, 1500);
+        }
+        
+        // Calculate total from cart
+        function calculateTotal() {
+            return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+        }
+        
+        // Generate random order number
+        function generateOrderNumber() {
+            const letters = 'WA';
+            const numbers = Math.floor(10000 + Math.random() * 90000);
+            return `${letters}${numbers}`;
+        }
+        
+        // Estimate delivery time
+        function estimateDeliveryTime(orderData) {
+            const now = new Date();
+            const orderDateTime = new Date(`${orderData.orderDate}T${orderData.orderTime}`);
+            
+            // If order is for pickup, use order time
+            if (orderData.locationType === 'pickup') {
+                return `${orderDateTime.getHours().toString().padStart(2, '0')}:${orderDateTime.getMinutes().toString().padStart(2, '0')}`;
             }
-        });
-
-        // Open cart modal
-        cartIcon.addEventListener('click', () => {
-            cartModal.style.display = 'flex';
-            updateCartDisplay();
-        });
-
-        // Close cart modal
-        closeCart.addEventListener('click', () => {
-            cartModal.style.display = 'none';
-        });
-
-        // Close product modal
-        closeProductModal.addEventListener('click', closeProductModalFunc);
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === cartModal) {
-                cartModal.style.display = 'none';
+            
+            // If order is for delivery, add 30-45 minutes
+            const deliveryDateTime = new Date(orderDateTime.getTime() + (40 * 60000)); // 40 minutes later
+            return `${deliveryDateTime.getHours().toString().padStart(2, '0')}:${deliveryDateTime.getMinutes().toString().padStart(2, '0')}`;
+        }
+        
+        // Save order to localStorage (simulating Formspree storage)
+        function saveOrderToLocalStorage(orderData) {
+            orders.push(orderData);
+            localStorage.setItem('wastaOrders', JSON.stringify(orders));
+            
+            // Also simulate sending to Formspree (in a real scenario, this would be a fetch request)
+            // For demo purposes, we'll log it
+            console.log('Order would be sent to Formspree:', orderData);
+            
+            // In a real implementation, you would use:
+            // fetch(FORMSPREE_URL, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(orderData)
+            // })
+        }
+        
+        // Load orders from localStorage
+        function loadOrders() {
+            ordersList.innerHTML = '';
+            
+            if (orders.length === 0) {
+                ordersList.innerHTML = '<p style="text-align: center; padding: 2rem; color: #999;">هیچ داواکاریەک نیە</p>';
+                return;
             }
-            if (e.target === tableModal) {
-                tableModal.style.display = 'none';
-            }
-            if (e.target === pizzaNotification) {
-                pizzaNotification.style.display = 'none';
-            }
-        });
-
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeMenu();
-            initializeTableSelection();
-        });
+            
+            // Sort orders by timestamp (newest first)
+            const sortedOrders = [...orders].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            sortedOrders.forEach(order => {
+                const orderElement = document.createElement('div');
+                orderElement.className = 'order-card';
+                
+                // Format items list
+                const itemsList = order.items.map(item => 
+                    `${item.quantity}x ${item.name} (${(item.price * item.quantity).toLocaleString()} دینار)`
+                ).join('<br>');
+                
+                orderElement.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <h3>داواکاری: ${order.orderNumber}</h3>
+                            <p><strong>کات:</strong> ${order.orderDate} ${order.orderTime}</p>
+                            <p><strong>شوێن:</strong> ${order.locationType === 'pickup' ? 'هێنان' : 'ناردن'}</p>
+                            <p><strong>ناونیشان:</strong> ${order.location || 'نا دیاری کراو'}</p>
+                        </div>
+                        <div style="text-align: left;">
+                            <h3>${order.total.toLocaleString()} دینار</h3>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>کەبابەکان:</strong></p>
+                        <p>${itemsList}</p>
+                    </div>
+                    ${order.notes ? `<p><strong>تێبینی:</strong> ${order.notes}</p>` : ''}
+                    ${order.phone ? `<p><strong>ژمارە:</strong> ${order.phone}</p>` : ''}
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                        <em>کات: ${new Date(order.timestamp).toLocaleString('ku')}</em>
+                    </p>
+                `;
+                
+                ordersList.appendChild(orderElement);
+            });
+        }
+        
+        // Reset form
+        function resetForm() {
+            // Reset form steps
+            step1.style.display = 'block';
+            step2.style.display = 'none';
+            successAnimation.style.display = 'none';
+            
+            // Reset form values
+            document.getElementById('locationType').value = 'pickup';
+            document.getElementById('location').value = '';
+            
+            // Reset spice level
+            spiceDots.forEach(dot => dot.classList.remove('active'));
+            spiceDots[2].classList.add('active');
+            spiceLevelInput.value = '2';
+            document.querySelector('.spice-level').textContent = 'مامناوەند';
+            
+            // Reset notes
+            noteOptions.forEach(option => option.classList.remove('active'));
+            document.getElementById('notes').value = '';
+            document.getElementById('phone').value = '';
+            
+            // Reset location options
+            locationOptions.forEach(opt => opt.classList.remove('active'));
+            locationOptions[1].classList.add('active');
+            
+            // Reset date and time
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('orderDate').value = today;
+            
+            const nextHour = new Date();
+            nextHour.setHours(nextHour.getHours() + 1);
+            document.getElementById('orderTime').value = `${nextHour.getHours().toString().padStart(2, '0')}:${nextHour.getMinutes().toString().padStart(2, '0')}`;
+        }
+        
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
